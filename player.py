@@ -10,7 +10,7 @@ class Player:
         self.height = 500
         self.pitch = 40
         self.angle_velocity = 0.01
-        self.velocity = 3
+        self.velocity = 10
 
     def update(self):
         sin_a = math.sin(self.angle)
@@ -36,11 +36,11 @@ class Player:
             self.pos[0] += self.velocity * cos_a
             self.pos[1] += self.velocity * sin_a
         if pressed_key[pygame.K_a]:
-            self.pos[0] += self.velocity * cos_a
-            self.pos[1] -= self.velocity * sin_a
+            self.pos[0] += self.velocity * sin_a
+            self.pos[1] -= self.velocity * cos_a
         if pressed_key[pygame.K_s]:
             self.pos[0] -= self.velocity * cos_a
             self.pos[1] -= self.velocity * sin_a
         if pressed_key[pygame.K_d]:
-            self.pos[0] -= self.velocity * cos_a
-            self.pos[1] += self.velocity * sin_a
+            self.pos[0] -= self.velocity * sin_a
+            self.pos[1] += self.velocity * cos_a
